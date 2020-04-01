@@ -5,7 +5,11 @@
 
 trigger:
 - master
-
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'pack'
+    packagesToPack: '**/*.csproj'
+    versioningScheme: 'off'
 pool:
   vmImage: 'ubuntu-latest'
 
